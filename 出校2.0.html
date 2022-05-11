@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+  <style>
+		  #toubuanniu{
+			background-image: url("图片/头部信息.jpg");
+			  width: 1170px;
+			  height: 180px;
+			  border: #FFFFFF;
+		  }
+	  #ma{
+		  background-image: url("图片/码.jpg");
+		  width: 1170px;
+		  height: 1065px;
+		   }
+	  .whitdate{
+		  color: #FFFFFF;
+		  font-size: 300%;
+		  padding-left: 120px;
+		  padding-bottom: 285px;
+		  width: 120px;
+		  height: 50px;
+		  
+	  }
+	  .mytime-style{
+		  align-content: center;
+		  color: #666666;
+		  width: 1170px;
+		  font-size: 110%;
+		  border: 1px solid #FFFFFF;
+		  		 	  
+	  }
+	  .playbutton-style{
+		  background-image: url("图片/底部信息.jpg");
+		  width: 1170px;
+		  height: 488px;
+		  border: #ffffff;
+	  }
+	  </style>
+	  
+	  <script type="text/javascript">
+	  
+	  function last(){
+		  
+		  
+		  var huifu = document.getElementById("ma1")
+		  huifu.style.backgroundImage="url(图片/码3.jpg)";
+		  
+	  }
+        function disptime(){  
+            var today=new Date();  
+            var hh=today.getHours();  
+            var minutes=today.getMinutes();  
+            var ss = today.getSeconds();  
+			var yy = today.getFullYear();
+			var mm = today.getMonth()+1;
+			var dd = today.getDate();
+			var ddd = dd-1;
+			ss = ss < 10? '0'+ss : ss;
+			hh = hh < 10? '0'+hh : hh;
+			minutes = minutes < 10? '0'+minutes : minutes;
+		        dd = dd < 10? '0'+dd : dd;
+            document.getElementById("mytime").innerHTML="<h1>"+mm+"月"+dd+"日"+"  "+hh+":"+minutes+":"+ss+"</h1>";
+			document.getElementById("mydate").innerHTML="<p>"+mm+"-"+ddd+"<p>"
+
+             
+        }   
+        //setInterval（）方法可以按照指定的周期调用函数或计算表达式  
+        var mytime = setInterval("disptime()",1000);  
+	  
+	  </script>
+	<script type="text/javascript">
+	 function buttonplay(){
+			 var playwords2 = document.getElementById("playwords");
+			 playwords2.play();
+			 var ma2 = document.getElementById("ma");
+			 ma2.style.backgroundImage="url(图片/码2.jpg)";
+			 
+			 
+		 }
+	function last(){
+		var ma2 = document.getElementById("ma");
+			 ma2.style.backgroundImage="url(图片/码.jpg)";
+	}
+	</script>
+	 
+
+<body>
+<table width="1170px">
+	
+    <tr> 
+	  <button id="toubuanniu" onClick="last()"> </button>
+	  </tr>
+	<tr>
+<img src="图片/中间信息.jpg">
+		
+	</tr>
+	<tr>
+	<p id="mytime" class="mytime-style" align="center"></p>
+	</tr>
+	<tr>
+   <p id="ma"> </p>
+	</tr>
+	<button onClick="buttonplay()" class="playbutton-style">
+
+	<p class="whitdate" id="mydate"></p>
+	<audio id="playwords" preload="auto" src="音频/出校.m4a"></audio>
+		
+	</button>
+	
+	</table>
+</body>
+</html>
